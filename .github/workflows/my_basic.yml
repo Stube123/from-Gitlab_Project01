@@ -8,7 +8,7 @@ name: My-GitHubActions-Basics
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   my_testing:
