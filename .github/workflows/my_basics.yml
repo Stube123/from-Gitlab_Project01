@@ -20,20 +20,33 @@ jobs:
     steps:
     - name: Print Hello Message
       run : echo "Hello Word from Testing job"
+
     - name: Execure few commands
       run : |
         echo "Hello Message1"
         echo "Hello Message2"
         echo "Aplication name: ${{ env.APPLICATION_NAME }}"
+    
     - name: List current folder
       run : ls -la
-    
+      
+    - name: Git clone my repo
+      uses: action/checkout@v1
     
   my_deploy:
     runs-on: ubuntu-latest
     needs: [my_testing]
+
     steps:
       - name: Print Hello Message
         run : echo "Hello Word from Deploy job"
+        
       - name: Printing Deployment pakcege
         run : echo "Deploy pakcage name is ${{ env.DEPLOY_PACKAGE_NAME }}" 
+
+      - name: Lets test some packages iof the are here 1
+        run : aws --version
+       
+      - name: Lets test some packages iof the are here 2
+        run : zip 
+       
