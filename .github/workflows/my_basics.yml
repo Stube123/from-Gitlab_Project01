@@ -31,7 +31,7 @@ jobs:
       run : ls -la
       
     - name: Git clone my repo
-      uses: actions/chekout
+      uses: actions/chekout@v3
     
   my_deploy:
     runs-on: ubuntu-latest
